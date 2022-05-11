@@ -1,1 +1,1 @@
-# LIF
+# LIF-Neurons
