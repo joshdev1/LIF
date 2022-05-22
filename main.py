@@ -1,5 +1,4 @@
-from lif_neuron import lif_neuron
+from lif_neuron import lif_neuron, graph_output
 
-spikes, rate = lif_neuron(5e-9, 0.1e-3, 1.5, 15e-3)
-print(spikes, rate)
-
+spikes, rate, v, time = lif_neuron(1.7e-9, 0.1e-3, 1.5, 15e-3)
+graph_output(time, v)

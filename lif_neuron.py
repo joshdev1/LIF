@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def lif_neuron(I, dt, T, tau):
@@ -19,4 +20,16 @@ def lif_neuron(I, dt, T, tau):
             spikes[i] = 1
             v[i+1] = v_reset
     rate = sum(spikes) / 1.5
-    return spikes, rate
+    return spikes, rate, v, time
+
+
+def graph_output(time, membrane_voltage):
+    plt.figure(figsize=(15, 7))
+    plt.plot(time, membrane_voltage, color=u'#FFBB6C', label='Voltage')
+    plt.legend(loc=1)
+    plt.grid()
+    plt.title('Leaky Integrate-and-Fire Neuron')
+    plt.ylabel('Membrane Potential (Vm)')
+    plt.xlabel('Time (msec)')
+    plt.show()
+
